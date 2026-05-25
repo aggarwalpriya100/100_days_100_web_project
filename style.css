@@ -2334,19 +2334,25 @@ body.light-mode .brand-mark {
     margin: 10px auto !important;
   }
 
-  /* Shrinks titles so they don't break boundaries on mobile */
-  h1, h2, .title {
+  /* Shrinks titles so they don't break boundaries on mobile — scoped to subfolder template containers */
+  .main-container h1, .main-container h2, .main-container .title,
+  .container h1, .container h2, .container .title,
+  .wrapper h1, .wrapper h2, .wrapper .title {
     font-size: 1.8rem !important;
     line-height: 1.3 !important;
     text-align: center !important;
     margin-bottom: 1rem !important;
   }
 
-  /* Ensures structural inputs remain cleanly within view constraints */
-  input, button, .btn {
+  /* Ensures structural inputs remain cleanly within view constraints — scoped to subfolder template containers */
+  .main-container input, .main-container button,
+  .container input, .container button,
+  .wrapper input, .wrapper button {
     width: 100% !important;
     max-width: 300px !important;
   }
+}
+
 /* ============================================================
    CANVAS FIX — particle canvas was pushing hero content down
    by occupying block layout space equal to window.innerHeight.
@@ -2384,4 +2390,3 @@ body::after {
 .toast {
   z-index: 100001;
 }
-
